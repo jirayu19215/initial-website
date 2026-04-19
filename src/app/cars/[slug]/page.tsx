@@ -7,14 +7,16 @@ export function generateStaticParams() {
   return cars.map((c) => ({ slug: c.slug }));
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }) {
-  const car = getCarBySlug(params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const car = getCarBySlug(slug);
   if (!car) return {};
   return { title: `${car.model} (${car.year}) | KMITL Formula Student` };
 }
 
-export default function CarDetail({ params }: { params: { slug: string } }) {
-  const car = getCarBySlug(params.slug);
+export default async function CarDetail({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const car = getCarBySlug(slug);
   if (!car) notFound();
 
   const photos = Array.from({ length: car.photoCount }, (_, i) => i + 1);
