@@ -9,51 +9,43 @@ export const metadata = {
 const newsArticles = [
   {
     id: 1,
-    title: 'KMITL-FS03: Engineering Excellence Unveiled',
-    date: 'March 15, 2024',
-    category: 'Vehicle Release',
-    excerpt: 'After months of intensive development, we proudly present KMITL-FS03 - our most advanced electric race car yet. Featuring revolutionary aerodynamics and optimized powertrain.',
-    image: '🏎️',
+    title: 'INITIAL Formula Student Heading to Formula Student China 2026',
+    date: 'April 2026',
+    category: 'Competition',
+    excerpt: 'We are proud to announce our participation in Formula Student China 2026 (Oct 13–18), competing in the EV & AV Class. This marks a major milestone for INITIAL as we take our electric race car to an international stage.',
+    image: '/fsc-competition.jpg',
   },
   {
     id: 2,
-    title: 'Formula Student Malaysia 2024: New Partnerships Announced',
-    date: 'March 10, 2024',
-    category: 'Partnership',
-    excerpt: 'We are excited to announce new strategic partnerships with leading technology companies for the upcoming Formula Student Malaysia competition.',
-    image: '🤝',
+    title: 'TARANTULA EV3 Takes 1st in EV Class at TSAE Auto Challenge 2025',
+    date: '2025',
+    category: 'Competition Result',
+    excerpt: 'Our TARANTULA EV3 achieved an outstanding performance at TSAE Auto Challenge 2025 — 7th Overall, 1st place in the EV Class, and Winner of the Best Presentation Award.',
+    image: '/TSAE.avif',
   },
   {
     id: 3,
-    title: 'Battery Technology Breakthrough: 18% Efficiency Gain',
-    date: 'March 5, 2024',
-    category: 'Technology',
-    excerpt: 'Our electronics team achieved a significant breakthrough in battery management systems, improving overall efficiency by 18% through innovative circuit design.',
-    image: '🔋',
+    title: 'Winner of Ansys Simulation Award at Formula Student Thailand 2025',
+    date: '2025',
+    category: 'Award',
+    excerpt: 'INITIAL Formula Student received the Ansys Simulation Award presented by CADFEM Thailand, along with 1st Runner-Up in the Efficiency Event and 1st Runner-Up in the EV Category — finishing 6th overall.',
+    image: '/TSAE.avif',
   },
   {
     id: 4,
-    title: 'Team Expands: Welcoming 12 New Engineers',
-    date: 'February 28, 2024',
-    category: 'Team',
-    excerpt: 'This recruitment season, we welcomed 12 talented new members to our team, bringing diverse skills and fresh perspectives to our engineering mission.',
-    image: '👥',
+    title: 'Introducing INIXII — Our 2025 Electric Race Car',
+    date: '2025',
+    category: 'Vehicle',
+    excerpt: 'Meet INIXII, our latest electric formula car developed for the 2026 season. Built by over 30 engineers across mechanical, electrical, and software disciplines, INIXII represents the next chapter of INITIAL.',
+    image: '/DSC05116.jpg',
   },
   {
     id: 5,
-    title: 'Sustainability Report 2024: Our Green Goals',
-    date: 'February 20, 2024',
-    category: 'Sustainability',
-    excerpt: 'KMITL Formula Student commits to net-zero emissions in operations and carbon-neutral vehicle manufacturing by 2026. Learn more about our sustainability roadmap.',
-    image: '🌱',
-  },
-  {
-    id: 6,
-    title: 'Formula Student East Europe: Competition Highlights',
-    date: 'February 15, 2024',
+    title: 'INITIAL Formula Student Joins Formula Student Thailand 2025',
+    date: '2025',
     category: 'Competition',
-    excerpt: 'Our team showcased excellence at Formula Student East Europe, securing top positions in design and efficiency competitions against international competitors.',
-    image: '🏆',
+    excerpt: 'INITIAL Formula Student will compete at Formula Student Thailand 2025, continuing our journey in domestic electric formula racing and pushing further toward international competition.',
+    image: '/TSAE.avif',
   },
 ];
 
@@ -74,8 +66,9 @@ export default function News() {
       <section className="container-section py-12">
         <article className="card-dark overflow-hidden group">
           <div className="grid md:grid-cols-2">
-            <div className="relative h-80 md:h-full bg-gradient-to-br from-primary-500/30 to-highlight/30 flex items-center justify-center text-7xl group-hover:scale-105 transition-transform duration-300">
-              {newsArticles[0].image}
+            <div className="relative h-80 md:h-full overflow-hidden">
+              <img src={newsArticles[0].image} alt={newsArticles[0].title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <div className="absolute inset-0 bg-black/30" />
             </div>
             <div className="p-8 md:p-12 flex flex-col justify-center">
               <span className="inline-block w-fit px-3 py-1 bg-primary-500 text-accent text-xs font-bold uppercase rounded-full mb-4">
@@ -101,8 +94,9 @@ export default function News() {
         <div className="grid md:grid-cols-2 gap-8">
           {newsArticles.slice(1).map((article) => (
             <article key={article.id} className="card-dark group h-full flex flex-col">
-              <div className="relative h-48 bg-gradient-to-br from-surface to-secondary flex items-center justify-center text-5xl group-hover:scale-105 transition-transform duration-300">
-                {article.image}
+              <div className="relative h-48 overflow-hidden">
+                <img src={article.image} alt={article.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <div className="absolute inset-0 bg-black/30" />
               </div>
               <div className="p-6 flex-1 flex flex-col">
                 <span className="inline-block w-fit px-3 py-1 bg-surface border border-dark-border text-highlight text-xs font-bold uppercase rounded-full mb-3">
