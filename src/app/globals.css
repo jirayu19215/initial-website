@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  --font-inter: 'Inter', sans-serif;
+  --font-plex-thai: 'IBM Plex Sans Thai', sans-serif;
+  
+  --color-primary: #E10600;
+  --color-secondary: #0B0B0D;
+  --color-surface: #121217;
+  --color-accent: #FFFFFF;
+  --color-highlight: #00D1FF;
+}
+
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-bold tracking-motorsport;
+  }
+
+  h1 {
+    @apply text-4xl md:text-6xl uppercase;
+  }
+
+  h2 {
+    @apply text-3xl md:text-5xl uppercase;
+  }
+
+  h3 {
+    @apply text-2xl md:text-4xl uppercase;
+  }
+
+  body {
+    @apply bg-secondary text-accent;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-block px-6 py-3 bg-primary-500 text-accent font-bold uppercase tracking-wider hover:bg-primary-600 transition-colors duration-200 rounded-sm;
+  }
+
+  .btn-secondary {
+    @apply inline-block px-6 py-3 border-2 border-accent text-accent font-bold uppercase tracking-wider hover:bg-accent hover:text-secondary transition-colors duration-200 rounded-sm;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-5xl font-bold uppercase text-accent tracking-wider mb-12;
+  }
+
+  .container-section {
+    @apply px-6 md:px-12 py-16 md:py-24 max-w-7xl mx-auto;
+  }
+
+  .gradient-overlay {
+    @apply absolute inset-0 bg-gradient-to-br from-black/70 via-transparent to-black/70;
+  }
+
+  .card-dark {
+    @apply bg-surface border border-dark-border rounded-lg overflow-hidden hover:border-highlight transition-all duration-300;
+  }
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Animation utilities */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.6s ease-out;
+}
