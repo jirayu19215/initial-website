@@ -17,8 +17,8 @@ export default function Home() {
           <div className="absolute inset-0 bg-black/60" />
         </div>
 
-        <div className="w-full flex items-start justify-end px-12 pt-24">
-          <div className="text-right max-w-xl">
+        <div className="w-full flex items-start justify-center md:justify-end px-6 md:px-12 pt-24">
+          <div className="text-center md:text-right max-w-xl">
             <h1 className="text-4xl md:text-6xl font-black uppercase mb-6 leading-tight">
               Engineered for
               <br />
@@ -32,9 +32,9 @@ export default function Home() {
               for the next generation of engineers.
             </p>
 
-            <div className="flex flex-col md:flex-row gap-6 justify-end items-center">
-              <a href="/contact" className="btn-primary">Become a Sponsor</a>
-              <a href="/cars" className="btn-secondary">Explore Our Car</a>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-end items-center">
+              <a href="/contact" className="btn-primary w-full sm:w-auto text-center">Become a Sponsor</a>
+              <a href="/cars" className="btn-secondary w-full sm:w-auto text-center">Explore Our Car</a>
             </div>
           </div>
         </div>

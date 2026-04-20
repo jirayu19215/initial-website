@@ -43,7 +43,7 @@ export default function About() {
         <h2 className="section-title">Our Journey</h2>
 
         <div className="relative space-y-12">
-          <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-1 h-full bg-primary-500" />
+          <div className="absolute left-1.5 md:left-1/2 transform md:-translate-x-1/2 w-1 h-full bg-primary-500" />
 
           {[
             { year: '2003', title: 'Team Founded', desc: 'INITIAL was established by students from the Faculty of Engineering and Faculty of Architecture at KMITL, united by a shared passion for automotive design and motorsport innovation.', slug: null, compUrl: null },
@@ -55,8 +55,8 @@ export default function About() {
             { year: '2024', title: 'Electric Era Begins', desc: 'TARANTULA EV3 marked the team\'s transition to EV, winning 1st in EV Class at TSAE 2025 and the Ansys Simulation Award at Formula Student Thailand 2025.', slug: 'tarantula-ev3', compUrl: null },
             { year: '2026', title: 'Going Global', desc: 'INITIAL heads to Formula Student China 2026 (Oct 13–18) with INIXII — our most advanced electric race car to date.', slug: 'inixii', compUrl: null },
           ].map((item, idx) => (
-            <div key={idx} className={`relative md:w-1/2 ${idx % 2 === 0 ? 'md:pr-12' : 'md:ml-auto md:pl-12'} pl-12 md:pl-0`}>
-              <div className="absolute left-0 md:left-1/2 transform md:-translate-x-4 -translate-x-6 top-2 w-4 h-4 bg-primary-500 rounded-full border-4 border-secondary" />
+            <div key={idx} className={`relative pl-10 md:pl-0 md:w-1/2 ${idx % 2 === 0 ? 'md:pr-12' : 'md:ml-auto md:pl-12'}`}>
+              <div className="absolute left-0 md:left-1/2 transform md:-translate-x-4 -translate-x-2 top-2 w-4 h-4 bg-primary-500 rounded-full border-4 border-secondary" />
 
               <div className="bg-secondary border border-primary-500/30 rounded-lg p-6">
                 {item.slug ? (
