@@ -3,6 +3,12 @@ export type Competition = {
   awards: string[];
 };
 
+export type CarSpec = {
+  system: string;
+  value: string;
+  highlight: string;
+};
+
 export type CarData = {
   slug: string;
   year: string;
@@ -10,13 +16,35 @@ export type CarData = {
   type: 'ICE' | 'EV';
   competitions: Competition[];
   photoCount: number; // อัปเดตตัวเลขนี้เมื่อใส่รูปใน public/cars/[slug]/
+  specs?: CarSpec[];
 };
 
 export const cars: CarData[] = [
   {
+    slug: 'kmitl-2026', year: '2026', model: 'Coming Soon', type: 'EV', photoCount: 0,
+    competitions: [
+      { name: 'Formula Student China 2026', awards: ['Coming Soon'] },
+      { name: 'Formula Student Thailand 2027', awards: ['Coming Soon'] },
+    ],
+  },
+  {
     slug: 'inixii', year: '2025', model: 'INIXII', type: 'EV', photoCount: 0,
     competitions: [
-      { name: 'TSAE Auto Challenge 2026', awards: ['Preparing for competition'] },
+      { name: 'TSAE Auto Challenge 2026', awards: [
+        'Overall Ranking: 6th place',
+        'Winner — Ansys Simulation Award (Presented by CADFEM Thailand)',
+        '1st Runner-Up — Efficiency Event',
+        '1st Runner-Up — Category EV',
+      ]},
+    ],
+    specs: [
+      { system: 'High Voltage System', value: '40.69 kW · 108 V · 4WD', highlight: '4× WC-95 Motor · Peak Torque 121.74 N·m' },
+      { system: 'Battery Pack', value: '6.75 kWh · 30S1P', highlight: '108 V Nominal · 31.50 kg · 125 A (2C-rate)' },
+      { system: 'Aerodynamics', value: 'Downforce 208.13 N', highlight: 'Wind Tunnel Verified · DRS · Front 55% / Rear 40%' },
+      { system: 'Chassis & Frame', value: '31.56 kg · FoS 2.13', highlight: 'Torsional Stiffness 2,804 Nm/deg · STKM13B Steel' },
+      { system: 'Brake System', value: 'Weight Reduced −50%', highlight: 'Topology Optimization · SS Braided Line · Pedal Ratio 5:1' },
+      { system: 'Gear / Powertrain', value: 'Ratio 9.88 · −22.7% weight', highlight: 'Planetary Gearset · SNCM420 · Carburized' },
+      { system: 'Control & Cooling', value: '10.9 kW Heat Load', highlight: 'Torque Vectoring · Teensy 4.1 · ANSYS CFD Verified' },
     ],
   },
   {
@@ -30,13 +58,13 @@ export const cars: CarData[] = [
     ],
   },
   {
-    slug: 'raubtier-ii', year: '2023', model: 'RAUBTIER II', type: 'ICE', photoCount: 0,
+    slug: 'raubtier-ii', year: '2023', model: 'RAUBTIER II', type: 'EV', photoCount: 0,
     competitions: [
       { name: 'TSAE Auto Challenge 2024', awards: ['Overall Ranking: 11th place'] },
     ],
   },
   {
-    slug: 'raubtier-i', year: '2022', model: 'RAUBTIER I', type: 'ICE', photoCount: 0,
+    slug: 'raubtier-i', year: '2022', model: 'RAUBTIER I', type: 'EV', photoCount: 0,
     competitions: [
       { name: 'TSAE Auto Challenge 2023', awards: ['Overall Ranking: 15th place'] },
     ],

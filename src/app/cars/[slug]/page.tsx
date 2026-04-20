@@ -66,6 +66,33 @@ export default async function CarDetail({ params }: { params: Promise<{ slug: st
         </section>
       )}
 
+      {/* Technical Specs */}
+      {car.specs && car.specs.length > 0 && (
+        <section className="container-section py-24 border-t border-dark-border">
+          <h2 className="section-title mb-10">Technical Specifications</h2>
+          <div className="overflow-x-auto">
+            <table className="w-full max-w-4xl text-sm">
+              <thead>
+                <tr className="border-b border-primary-500">
+                  <th className="text-left py-3 pr-6 text-xs uppercase tracking-widest text-primary-500 w-48">System</th>
+                  <th className="text-left py-3 pr-6 text-xs uppercase tracking-widest text-gray-400">Key Numbers</th>
+                  <th className="text-left py-3 text-xs uppercase tracking-widest text-gray-400">Highlights</th>
+                </tr>
+              </thead>
+              <tbody>
+                {car.specs.map((spec, i) => (
+                  <tr key={i} className="border-b border-dark-border hover:bg-surface/50 transition-colors">
+                    <td className="py-4 pr-6 font-bold uppercase text-white text-xs tracking-wide">{spec.system}</td>
+                    <td className="py-4 pr-6 text-gray-300 font-mono text-xs">{spec.value}</td>
+                    <td className="py-4 text-gray-400 text-xs">{spec.highlight}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+      )}
+
       {/* Competition Results */}
       <section className="container-section py-24 border-t border-dark-border">
         <h2 className="section-title mb-10">Competition Results</h2>

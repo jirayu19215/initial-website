@@ -33,8 +33,8 @@ export default function Home() {
             </p>
 
             <div className="flex flex-col md:flex-row gap-6 justify-end items-center">
-              <button className="btn-primary">Become a Sponsor</button>
-              <button className="btn-secondary">Explore Our Car</button>
+              <a href="/contact" className="btn-primary">Become a Sponsor</a>
+              <a href="/cars" className="btn-secondary">Explore Our Car</a>
             </div>
           </div>
         </div>
@@ -187,36 +187,57 @@ export default function Home() {
           <h2 className="text-3xl md:text-4xl font-black uppercase leading-tight">Competition Results</h2>
         </div>
 
-        <div className="relative overflow-hidden rounded-lg max-w-2xl" style={{ backgroundImage: "url('/DSCF5192.jpg')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
-          <div className="absolute inset-0 bg-black/75" />
-          <div className="relative z-10 p-8">
-          <div className="mb-6">
-            <p className="font-bold uppercase text-sm tracking-wide">Formula Student Thailand 2025</p>
-            <p className="text-gray-400 text-xs mt-1">Thailand · 2024</p>
-          </div>
-
-          <div className="flex gap-8 mb-8">
-            <div className="border-l-4 border-primary-500 pl-4">
-              <p className="text-xs text-gray-400 uppercase tracking-wide mb-1">Overall</p>
-              <p className="text-3xl font-black text-white">6<span className="text-lg align-super">th</span></p>
-              <p className="text-xs text-gray-500 mt-1">ICV / EV</p>
+        <div className="grid md:grid-cols-2 gap-6 max-w-4xl">
+          {/* FST 2025 Result */}
+          <div className="relative overflow-hidden rounded-lg" style={{ backgroundImage: "url('/DSCF5192.jpg')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
+            <div className="absolute inset-0 bg-black/75" />
+            <div className="relative z-10 p-8">
+              <div className="mb-6">
+                <p className="font-bold uppercase text-sm tracking-wide">Formula Student Thailand 2025</p>
+                <p className="text-gray-400 text-xs mt-1">Thailand · 2024</p>
+              </div>
+              <div className="flex gap-8 mb-8">
+                <div className="border-l-4 border-primary-500 pl-4">
+                  <p className="text-xs text-gray-400 uppercase tracking-wide mb-1">Overall</p>
+                  <p className="text-3xl font-black text-white">6<span className="text-lg align-super">th</span></p>
+                  <p className="text-xs text-gray-500 mt-1">ICV / EV</p>
+                </div>
+              </div>
+              <div className="space-y-3">
+                <div className="flex items-center gap-3">
+                  <span className="text-xs font-bold px-2 py-0.5 rounded bg-primary-500/20 text-primary-400 uppercase tracking-wide shrink-0">Winner</span>
+                  <p className="text-sm text-gray-300">Ansys Simulation Award <span className="text-gray-500">(Presented by CADFEM Thailand)</span></p>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="text-xs font-bold px-2 py-0.5 rounded bg-dark-border/60 text-gray-400 uppercase tracking-wide shrink-0">1st Runner-Up</span>
+                  <p className="text-sm text-gray-300">Efficiency Event</p>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="text-xs font-bold px-2 py-0.5 rounded bg-dark-border/60 text-gray-400 uppercase tracking-wide shrink-0">1st Runner-Up</span>
+                  <p className="text-sm text-gray-300">Category EV</p>
+                </div>
+              </div>
             </div>
           </div>
 
-          <div className="space-y-3">
-            <div className="flex items-center gap-3">
-              <span className="text-xs font-bold px-2 py-0.5 rounded bg-primary-500/20 text-primary-400 uppercase tracking-wide shrink-0">Winner</span>
-              <p className="text-sm text-gray-300">Ansys Simulation Award <span className="text-gray-500">(Presented by CADFEM Thailand)</span></p>
+          {/* 2026 Upcoming */}
+          <div className="border border-primary-500/30 rounded-lg p-8 bg-secondary flex flex-col gap-6">
+            <div>
+              <p className="text-xs uppercase tracking-widest text-primary-500 mb-3">Upcoming 2026</p>
+              <p className="font-black uppercase text-lg leading-tight">Next Competitions</p>
             </div>
-            <div className="flex items-center gap-3">
-              <span className="text-xs font-bold px-2 py-0.5 rounded bg-dark-border/60 text-gray-400 uppercase tracking-wide shrink-0">1st Runner-Up</span>
-              <p className="text-sm text-gray-300">Efficiency Event</p>
+            <div className="space-y-4">
+              <div className="border-l-4 border-primary-500 pl-4">
+                <p className="font-bold uppercase text-sm text-white">Formula Student China 2026</p>
+                <p className="text-gray-400 text-xs mt-1">Oct 13–18, 2026 · China</p>
+                <span className="inline-block mt-2 text-xs px-2 py-0.5 rounded bg-primary-500/20 text-primary-400 uppercase tracking-wide">EV &amp; AV Class</span>
+              </div>
+              <div className="border-l-4 border-dark-border pl-4">
+                <p className="font-bold uppercase text-sm text-white">Formula Student Thailand 2026</p>
+                <p className="text-gray-400 text-xs mt-1">2026 · Thailand</p>
+                <span className="inline-block mt-2 text-xs px-2 py-0.5 rounded bg-dark-border/60 text-gray-400 uppercase tracking-wide">Coming Soon</span>
+              </div>
             </div>
-            <div className="flex items-center gap-3">
-              <span className="text-xs font-bold px-2 py-0.5 rounded bg-dark-border/60 text-gray-400 uppercase tracking-wide shrink-0">1st Runner-Up</span>
-              <p className="text-sm text-gray-300">Category EV</p>
-            </div>
-          </div>
           </div>
         </div>
       </section>
