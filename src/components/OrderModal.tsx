@@ -59,23 +59,23 @@ export function OrderModal({ productName, sizes, onClose }: OrderModalProps) {
           <div className="p-10 text-center">
             <p className="text-4xl mb-4">✓</p>
             <h3 className="font-black uppercase text-lg mb-2">Order Received!</h3>
-            <p className="text-gray-400 text-sm">ทีมงานจะติดต่อกลับหาคุณเร็วๆ นี้ครับ</p>
-            <button onClick={onClose} className="btn-primary mt-6 text-xs py-2 px-6">ปิด</button>
+            <p className="text-gray-400 text-sm">Our team will get back to you shortly.</p>
+            <button onClick={onClose} className="btn-primary mt-6 text-xs py-2 px-6">Close</button>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="p-6 space-y-4">
             <div className="grid grid-cols-2 gap-4">
               <div className="col-span-2">
-                <label className="block text-xs uppercase tracking-wide text-gray-400 mb-1">ชื่อ-นามสกุล *</label>
+                <label className="block text-xs uppercase tracking-wide text-gray-400 mb-1">Full Name *</label>
                 <input
                   name="name" value={form.name} onChange={handleChange} required
                   className="w-full bg-secondary border border-dark-border rounded-lg px-3 py-2 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-primary-500"
-                  placeholder="กรอกชื่อ-นามสกุล"
+                  placeholder="Your full name"
                 />
               </div>
 
               <div>
-                <label className="block text-xs uppercase tracking-wide text-gray-400 mb-1">เบอร์โทร *</label>
+                <label className="block text-xs uppercase tracking-wide text-gray-400 mb-1">Phone *</label>
                 <input
                   name="phone" value={form.phone} onChange={handleChange} required type="tel"
                   className="w-full bg-secondary border border-dark-border rounded-lg px-3 py-2 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-primary-500"
@@ -93,7 +93,7 @@ export function OrderModal({ productName, sizes, onClose }: OrderModalProps) {
               </div>
 
               <div>
-                <label className="block text-xs uppercase tracking-wide text-gray-400 mb-1">ไซส์ *</label>
+                <label className="block text-xs uppercase tracking-wide text-gray-400 mb-1">Size *</label>
                 <select
                   name="size" value={form.size} onChange={handleChange}
                   className="w-full bg-secondary border border-dark-border rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-primary-500"
@@ -103,7 +103,7 @@ export function OrderModal({ productName, sizes, onClose }: OrderModalProps) {
               </div>
 
               <div>
-                <label className="block text-xs uppercase tracking-wide text-gray-400 mb-1">จำนวน *</label>
+                <label className="block text-xs uppercase tracking-wide text-gray-400 mb-1">Quantity *</label>
                 <input
                   name="quantity" value={form.quantity} onChange={handleChange} required type="number" min="1" max="10"
                   className="w-full bg-secondary border border-dark-border rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-primary-500"
@@ -111,34 +111,34 @@ export function OrderModal({ productName, sizes, onClose }: OrderModalProps) {
               </div>
 
               <div className="col-span-2">
-                <label className="block text-xs uppercase tracking-wide text-gray-400 mb-1">ที่อยู่จัดส่ง *</label>
+                <label className="block text-xs uppercase tracking-wide text-gray-400 mb-1">Shipping Address *</label>
                 <textarea
                   name="address" value={form.address} onChange={handleChange} required rows={3}
                   className="w-full bg-secondary border border-dark-border rounded-lg px-3 py-2 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-primary-500 resize-none"
-                  placeholder="บ้านเลขที่ ถนน ตำบล อำเภอ จังหวัด รหัสไปรษณีย์"
+                  placeholder="House no., street, district, province, postal code"
                 />
               </div>
 
               <div className="col-span-2">
-                <label className="block text-xs uppercase tracking-wide text-gray-400 mb-1">หมายเหตุ</label>
+                <label className="block text-xs uppercase tracking-wide text-gray-400 mb-1">Notes</label>
                 <input
                   name="notes" value={form.notes} onChange={handleChange}
                   className="w-full bg-secondary border border-dark-border rounded-lg px-3 py-2 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-primary-500"
-                  placeholder="ข้อมูลเพิ่มเติม (ถ้ามี)"
+                  placeholder="Additional info (optional)"
                 />
               </div>
             </div>
 
             {status === 'error' && (
-              <p className="text-red-400 text-xs">เกิดข้อผิดพลาด กรุณาลองใหม่อีกครั้ง</p>
+              <p className="text-red-400 text-xs">Something went wrong. Please try again.</p>
             )}
 
             <div className="flex gap-3 pt-2">
               <button type="button" onClick={onClose} className="flex-1 py-2 text-sm border border-dark-border rounded-lg text-gray-400 hover:text-white hover:border-gray-500 transition-colors">
-                ยกเลิก
+                Cancel
               </button>
               <button type="submit" disabled={status === 'sending'} className="flex-1 btn-primary py-2 text-sm">
-                {status === 'sending' ? 'กำลังส่ง...' : 'ยืนยันคำสั่งซื้อ'}
+                {status === 'sending' ? 'Sending...' : 'Confirm Order'}
               </button>
             </div>
           </form>

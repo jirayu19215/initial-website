@@ -9,7 +9,7 @@ import { OrderModal } from '@/components/OrderModal';
 const products = [
   {
     name: 'KMITL-FS Team Tee',
-    desc: 'เสื้อยืด official ของทีม ผ้า Cotton 100%',
+    desc: 'Official team t-shirt, 100% Cotton.',
     price: '—',
     sizes: ['S', 'M', 'L', 'XL', 'XXL'],
     tag: 'Team Edition',
@@ -29,7 +29,7 @@ export default function Shop() {
         <p className="text-xs uppercase tracking-widest text-primary-500 mb-4">Merchandise</p>
         <h1 className="text-5xl md:text-6xl font-black uppercase mb-6">Shop</h1>
         <p className="text-xl text-gray-300 max-w-2xl">
-          สินค้า official จากทีม KMITL Formula Student
+          Official merchandise from the KMITL Formula Student team.
         </p>
       </section>
 

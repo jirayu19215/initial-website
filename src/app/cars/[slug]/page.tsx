@@ -72,16 +72,19 @@ export default async function CarDetail({ params }: { params: Promise<{ slug: st
 
         <div className="space-y-8 max-w-2xl">
           {car.competitions.map((comp, i) => (
-            <div key={i} className="card-dark p-8">
-              <h3 className="font-bold uppercase text-highlight mb-5">{comp.name}</h3>
-              <ul className="space-y-3">
-                {comp.awards.map((award, j) => (
-                  <li key={j} className="flex gap-3 text-gray-300">
-                    <span className="text-primary-500 shrink-0 mt-0.5">▸</span>
-                    {award}
-                  </li>
-                ))}
-              </ul>
+            <div key={i} className="relative overflow-hidden rounded-lg" style={{ backgroundImage: "url('/DSCF5192.jpg')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
+              <div className="absolute inset-0 bg-black/75" />
+              <div className="relative z-10 p-8">
+                <h3 className="font-bold uppercase text-highlight mb-5">{comp.name}</h3>
+                <ul className="space-y-3">
+                  {comp.awards.map((award, j) => (
+                    <li key={j} className="flex gap-3 text-gray-300">
+                      <span className="text-primary-500 shrink-0 mt-0.5">▸</span>
+                      {award}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           ))}
         </div>

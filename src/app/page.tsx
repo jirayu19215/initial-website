@@ -187,7 +187,9 @@ export default function Home() {
           <h2 className="text-3xl md:text-4xl font-black uppercase leading-tight">Competition Results</h2>
         </div>
 
-        <div className="border border-dark-border rounded-lg p-8 bg-surface/30 max-w-2xl">
+        <div className="relative overflow-hidden rounded-lg max-w-2xl" style={{ backgroundImage: "url('/DSCF5192.jpg')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
+          <div className="absolute inset-0 bg-black/75" />
+          <div className="relative z-10 p-8">
           <div className="mb-6">
             <p className="font-bold uppercase text-sm tracking-wide">Formula Student Thailand 2025</p>
             <p className="text-gray-400 text-xs mt-1">Thailand · 2024</p>
@@ -214,6 +216,7 @@ export default function Home() {
               <span className="text-xs font-bold px-2 py-0.5 rounded bg-dark-border/60 text-gray-400 uppercase tracking-wide shrink-0">1st Runner-Up</span>
               <p className="text-sm text-gray-300">Category EV</p>
             </div>
+          </div>
           </div>
         </div>
       </section>
