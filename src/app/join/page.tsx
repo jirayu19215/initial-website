@@ -142,10 +142,10 @@ export default function Join() {
             <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-1 h-full bg-gradient-to-b from-primary-500 to-highlight" />
 
             {[
-              { phase: 'Phase 1', title: 'Application Deadline', date: 'April 30, 2024', desc: 'Submit your application and resume online' },
-              { phase: 'Phase 2', title: 'Online Assessment', date: 'May 1-15, 2024', desc: 'Complete technical and problem-solving tests' },
-              { phase: 'Phase 3', title: 'Technical Interview', date: 'May 16-31, 2024', desc: 'Interview with department leads' },
-              { phase: 'Phase 4', title: 'Team Integration', date: 'June 1-15, 2024', desc: 'Meet with the team and onboarding' },
+              { phase: 'Phase 1', title: 'Application Deadline', date: 'April 30, 2026', desc: 'Submit your application and resume online' },
+              { phase: 'Phase 2', title: 'Online Assessment', date: 'May 1-15, 2026', desc: 'Complete technical and problem-solving tests' },
+              { phase: 'Phase 3', title: 'Technical Interview', date: 'May 16-31, 2026', desc: 'Interview with department leads' },
+              { phase: 'Phase 4', title: 'Team Integration', date: 'June 1-15, 2026', desc: 'Meet with the team and onboarding' },
             ].map((item, idx) => (
               <div key={idx} className={`relative md:w-1/2 ${idx % 2 === 0 ? 'md:pr-12' : 'md:ml-auto md:pl-12'} pl-12 md:pl-0`}>
                 <div className="absolute left-0 md:left-1/2 transform md:-translate-x-4 -translate-x-6 top-2 w-4 h-4 bg-primary-500 rounded-full border-4 border-secondary" />

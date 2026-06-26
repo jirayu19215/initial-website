@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-const APPS_SCRIPT_URL = process.env.NEXT_PUBLIC_APPS_SCRIPT_URL ?? '';
+const APPS_SCRIPT_URL = process.env.APPS_SCRIPT_URL ?? '';
 
 export async function POST(req: NextRequest) {
   try {

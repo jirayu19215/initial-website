@@ -14,21 +14,39 @@ export default function Contact() {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    // Handle form submission - connect to backend
-    console.log('Form submitted:', formData);
-    setSubmitted(true);
-    setTimeout(() => {
-      setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
-      setSubmitted(false);
-    }, 3000);
+    setLoading(true);
+    setError('');
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      const data = await res.json();
+
+      if (!res.ok || !data.success) {
+        setError(data.error ?? 'Something went wrong. Please try again.');
+      } else {
+        setSubmitted(true);
+        setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+        setTimeout(() => setSubmitted(false), 4000);
+      }
+    } catch {
+      setError('Network error. Please check your connection and try again.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -165,19 +183,26 @@ export default function Contact() {
               <div className="flex gap-4">
                 <button
                   type="submit"
-                  disabled={submitted}
+                  disabled={loading || submitted}
                   className="btn-primary disabled:opacity-50"
                 >
-                  {submitted ? 'Message Sent!' : 'Send Message'}
+                  {loading ? 'Sending...' : submitted ? 'Message Sent!' : 'Send Message'}
                 </button>
                 <button
                   type="reset"
-                  className="btn-secondary"
+                  disabled={loading}
+                  className="btn-secondary disabled:opacity-50"
                   onClick={() => setFormData({ name: '', email: '', phone: '', subject: '', message: '' })}
                 >
                   Clear
                 </button>
               </div>
+
+              {error && (
+                <div className="p-4 bg-red-500/20 border border-red-500/50 rounded text-red-400 text-sm">
+                  {error}
+                </div>
+              )}
 
               {submitted && (
                 <div className="p-4 bg-primary-500/20 border border-primary-500/50 rounded text-primary-500 text-sm">

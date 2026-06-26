@@ -75,7 +75,7 @@ export function Navigation() {
                 {link.label}
               </Link>
             ))}
-            <a href="#sponsors" className="btn-primary block text-center text-xs py-2">
+            <a href="/sponsors" className="btn-primary block text-center text-xs py-2">
               Sponsor
             </a>
           </div>

@@ -4,11 +4,11 @@ import { Inter } from 'next/font/google';
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
 export const metadata = {
-  title: 'INIYAIL KMITL Formula Student',
+  title: 'INITIAL KMITL Formula Student',
   description: 'Engineering Excellence in Motorsport - KMITL Formula Student Racing Team',
-  metadataBase: new URL('https://kmitl-fs.vercel.app'),
+  metadataBase: new URL('https://initial-website-65h7.vercel.app'),
   openGraph: {
-    title: 'INIYAIL KMITL Formula Student',
+    title: 'INITIAL KMITL Formula Student',
     description: 'Engineering Excellence in Motorsport',
     image: '/og-image.jpg',
     type: 'website',

@@ -14,10 +14,10 @@ export default function Home() {
             alt="Hero background"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/60" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/40 to-black/20" />
         </div>
 
-        <div className="w-full flex items-start justify-center md:justify-end px-6 md:px-12 pt-24">
+        <div className="w-full flex justify-center md:justify-end px-6 md:px-12">
           <div className="text-center md:text-right max-w-xl">
             <h1 className="text-4xl md:text-6xl font-black uppercase mb-6 leading-tight">
               Engineered for
@@ -43,7 +43,7 @@ export default function Home() {
       {/* Current Car Highlight + Stats */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 -z-10">
-          <img src="/Race2569-302.jpg" alt="" className="w-full h-full object-cover" />
+          <img src="/Race2569-302.jpg" alt="INITIAL KMITL electric race car at competition" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-black/70" />
         </div>
 
@@ -52,20 +52,20 @@ export default function Home() {
           <div className="container-section py-8">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
               <div>
-                <p className="text-3xl md:text-4xl font-bold text-primary-500 mb-2">2025</p>
-                <p className="text-sm uppercase tracking-wide text-gray-400">Year Active</p>
+                <p className="text-3xl md:text-4xl font-bold text-primary-500 mb-2">2003</p>
+                <p className="text-sm uppercase tracking-wide text-gray-400">Est.</p>
               </div>
               <div>
-                <p className="text-3xl md:text-4xl font-bold text-highlight mb-2">30+</p>
+                <p className="text-3xl md:text-4xl font-bold text-primary-500 mb-2">30+</p>
                 <p className="text-sm uppercase tracking-wide text-gray-400">Members</p>
               </div>
               <div>
-                <p className="text-3xl md:text-4xl font-bold text-highlight mb-2">1</p>
-                <p className="text-sm uppercase tracking-wide text-gray-400">Electric Car</p>
+                <p className="text-3xl md:text-4xl font-bold text-primary-500 mb-2">6th</p>
+                <p className="text-sm uppercase tracking-wide text-gray-400">Best Overall</p>
               </div>
               <div>
-                <p className="text-3xl md:text-4xl font-bold text-highlight mb-2">5+</p>
-                <p className="text-sm uppercase tracking-wide text-gray-400">Subsystems</p>
+                <p className="text-3xl md:text-4xl font-bold text-primary-500 mb-2">2×</p>
+                <p className="text-sm uppercase tracking-wide text-gray-400">Champions</p>
               </div>
             </div>
           </div>
@@ -84,7 +84,7 @@ export default function Home() {
                 <p className="text-sm text-gray-400">0–100 km/h</p>
                 <p className="text-3xl font-bold text-highlight">3.2s</p>
               </div>
-              <div className="border-l-4 border-highlight pl-6">
+              <div className="border-l-4 border-primary-500 pl-6">
                 <p className="text-sm text-gray-400">Power Output</p>
                 <p className="text-3xl font-bold text-highlight">85 kW</p>
               </div>
@@ -92,7 +92,7 @@ export default function Home() {
                 <p className="text-sm text-gray-400">Curb Weight</p>
                 <p className="text-3xl font-bold text-highlight">280 kg</p>
               </div>
-              <div className="border-l-4 border-highlight pl-6">
+              <div className="border-l-4 border-primary-500 pl-6">
                 <p className="text-sm text-gray-400">Battery Capacity</p>
                 <p className="text-3xl font-bold text-highlight">14.4 kWh</p>
               </div>
@@ -107,7 +107,7 @@ export default function Home() {
       <section className="container-section py-24 border-t border-dark-border">
         <div className="max-w-2xl">
           <p className="text-xs uppercase tracking-widest text-primary-500 mb-4">About Us</p>
-          <h2 className="text-3xl md:text-4xl font-black uppercase mb-6 leading-tight">
+          <h2 className="text-3xl md:text-5xl font-black uppercase mb-6 leading-tight">
             Building the Next Generation<br />of Engineers
           </h2>
           <p className="text-lg text-gray-300 mb-4">
@@ -128,7 +128,7 @@ export default function Home() {
         <div className="flex items-end justify-between mb-10">
           <div>
             <p className="text-xs uppercase tracking-widest text-primary-500 mb-4">2026 Season</p>
-            <h2 className="text-3xl md:text-4xl font-black uppercase leading-tight">Where We Compete</h2>
+            <h2 className="text-3xl md:text-5xl font-black uppercase leading-tight">Where We Compete</h2>
           </div>
           <a href="/news" className="btn-secondary hidden md:inline-block">View Details →</a>
         </div>
@@ -136,7 +136,7 @@ export default function Home() {
         <div className="space-y-4 mb-8">
           {[
             { event: 'Formula Student China', location: 'China (Location TBC)', date: 'Oct 13–18, 2026', detail: 'EV & AV Class', status: 'Upcoming', href: 'https://formulastudent.sae-china.org/', bg: '/fsc-competition.jpg' },
-            { event: 'Formula Student Thailand', location: 'Thailand', date: '2025', detail: '', status: 'Confirmed', href: 'https://www.tsae.or.th/', bg: '/TSAE.avif' },
+            { event: 'Formula Student Thailand', location: 'Thailand', date: '2026', detail: '', status: 'Confirmed', href: 'https://www.tsae.or.th/', bg: '/TSAE.avif' },
           ].map((race, idx) => (
             <a
               key={idx}
@@ -184,7 +184,7 @@ export default function Home() {
       <section className="container-section py-24 border-t border-dark-border">
         <div className="mb-10">
           <p className="text-xs uppercase tracking-widest text-primary-500 mb-4">2025 Latest Results</p>
-          <h2 className="text-3xl md:text-4xl font-black uppercase leading-tight">Competition Results</h2>
+          <h2 className="text-3xl md:text-5xl font-black uppercase leading-tight">Competition Results</h2>
         </div>
 
         <div className="grid md:grid-cols-2 gap-6 max-w-4xl">
@@ -193,8 +193,8 @@ export default function Home() {
             <div className="absolute inset-0 bg-black/75" />
             <div className="relative z-10 p-8">
               <div className="mb-6">
-                <p className="font-bold uppercase text-sm tracking-wide">Formula Student Thailand 2025</p>
-                <p className="text-gray-400 text-xs mt-1">Thailand · 2024</p>
+                <p className="font-bold uppercase text-sm tracking-wide">TSAE Auto Challenge 2026</p>
+                <p className="text-gray-400 text-xs mt-1">Thailand · 2026</p>
               </div>
               <div className="flex gap-8 mb-8">
                 <div className="border-l-4 border-primary-500 pl-4">

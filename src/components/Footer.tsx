@@ -54,7 +54,6 @@ export function Footer() {
           <div className="flex gap-6 mt-4 md:mt-0">
             <a href="https://www.facebook.com/initialteam/" target="_blank" rel="noopener noreferrer" className="hover:text-highlight transition-colors">Facebook</a>
             <a href="https://www.instagram.com/initialformula.kmitl/" target="_blank" rel="noopener noreferrer" className="hover:text-highlight transition-colors">Instagram</a>
-            <a href="#" className="hover:text-highlight transition-colors">LinkedIn</a>
           </div>
         </div>
       </div>
