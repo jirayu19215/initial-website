@@ -29,7 +29,7 @@ export function CarTimeline() {
               <span className={`px-2 md:px-3 py-1 rounded-full text-xs font-bold uppercase ${
                 car.type === 'EV'
                   ? 'bg-primary-500/20 text-primary-400'
-                  : 'bg-highlight/20 text-highlight'
+                  : 'bg-white/10 text-gray-300'
               }`}>
                 {car.type}
               </span>

@@ -57,7 +57,7 @@ export default function Contact() {
       <section className="pt-24 pb-12 container-section">
         <h1 className="text-5xl md:text-6xl uppercase mb-6">Contact Us</h1>
         <p className="text-xl text-gray-300 max-w-2xl">
-          Have questions or interested in sponsoring? We'd love to hear from you. Get in touch using the form below or reach out directly.
+          Have questions or interested in partnering with us? We'd love to hear from you. Get in touch using the form below or reach out directly.
         </p>
       </section>
 
@@ -158,8 +158,8 @@ export default function Contact() {
                     className="w-full px-4 py-3 bg-surface border border-dark-border rounded-sm focus:outline-none focus:border-highlight transition-colors"
                   >
                     <option value="">Select a subject...</option>
-                    <option value="sponsorship">Sponsorship Inquiry</option>
-                    <option value="partnership">Partnership</option>
+                    <option value="sponsorship">Partnership Inquiry</option>
+                    <option value="partnership">Technical Partnership</option>
                     <option value="recruitment">Recruitment</option>
                     <option value="media">Media Request</option>
                     <option value="other">Other</option>
@@ -243,7 +243,7 @@ export default function Contact() {
               <div className="space-y-3">
                 {[
                   { label: 'About Us', href: '/about' },
-                  { label: 'Sponsorship', href: '/sponsors' },
+                  { label: 'Partnership', href: '/partners' },
                   { label: 'Join Team', href: '/join' },
                   { label: 'News', href: '/news' },
                 ].map((link, idx) => (
@@ -267,7 +267,7 @@ export default function Contact() {
           <h2 className="text-3xl font-bold uppercase mb-8 text-center">Response Time</h2>
           <div className="grid md:grid-cols-2 gap-8">
             {[
-              { label: 'Sponsorship Inquiry', time: '24-48 hours' },
+              { label: 'Partnership Inquiry', time: '24-48 hours' },
               { label: 'General Inquiry', time: '2-3 business days' },
               { label: 'Urgent Matters', time: 'initial.formula@gmail.com' },
               { label: 'Media Requests', time: 'initial.formula@gmail.com' },

@@ -8,7 +8,7 @@ export function Footer() {
           {/* Brand */}
           <div className="md:col-span-1">
             <div className="flex items-center gap-2 mb-3">
-              <img src="/logo/logo_initail.png" alt="INITIAL Logo" className="h-5 w-5 object-contain" />
+              <img src="/logo/logo_initial_wide.png" alt="INITIAL Logo" className="h-5 w-auto object-contain" />
               <h3 className="font-black uppercase text-lg tracking-wide text-white">KMITL</h3>
             </div>
             <p className="text-xs uppercase tracking-widest text-highlight mb-3">INITIAL Formula Student</p>
@@ -30,7 +30,7 @@ export function Footer() {
           <div>
             <h4 className="font-bold uppercase text-sm mb-4">Resources</h4>
             <ul className="space-y-2 text-sm">
-              <li><Link href="/sponsors" className="hover:text-highlight transition-colors">Sponsors</Link></li>
+              <li><Link href="/partners" className="hover:text-highlight transition-colors">Partners</Link></li>
               <li><Link href="/news" className="hover:text-highlight transition-colors">News</Link></li>
               <li><Link href="/join" className="hover:text-highlight transition-colors">Join</Link></li>
               <li><Link href="/contact" className="hover:text-highlight transition-colors">Contact</Link></li>

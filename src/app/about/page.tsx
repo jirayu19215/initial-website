@@ -146,12 +146,17 @@ export default function About() {
           ))}
         </div>
 
-        {/* Full Team Photo Placeholder */}
-        <div className="bg-surface border border-dark-border rounded-lg h-96 flex items-center justify-center">
-          <div className="text-center">
-            <p className="text-gray-500 text-sm uppercase tracking-wide">Full Team Photo</p>
-            <p className="text-xs text-gray-600 mt-2">Replace with team group photo</p>
-          </div>
+        {/* Full Team Photo */}
+        <div className="relative rounded-lg overflow-hidden border border-dark-border h-96 group">
+          <img
+            src="/Race2569-302.jpg"
+            alt="INITIAL KMITL team at TSAE Auto Challenge 2026"
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+          <p className="absolute bottom-4 left-6 text-sm uppercase tracking-widest text-white font-bold">
+            INITIAL at TSAE Auto Challenge 2026
+          </p>
         </div>
       </section>
 

@@ -2,17 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap');
 
 :root {
-  --font-inter: 'Inter', sans-serif;
+  --font-inter: 'Inter', 'IBM Plex Sans Thai', sans-serif;
   --font-plex-thai: 'IBM Plex Sans Thai', sans-serif;
-  
+
   --color-primary: #E10600;
   --color-secondary: #0B0B0D;
   --color-surface: #121217;
   --color-accent: #FFFFFF;
-  --color-highlight: #00D1FF;
+  --color-highlight: #FF4D4D;
 }
 
 @layer base {
@@ -35,15 +35,29 @@
   body {
     @apply bg-secondary text-accent;
   }
+
+  ::selection {
+    background: rgba(225, 6, 0, 0.6);
+    color: #fff;
+  }
 }
 
 @layer components {
   .btn-primary {
-    @apply inline-block px-6 py-3 bg-primary-500 text-accent font-bold uppercase tracking-wider hover:bg-primary-600 transition-colors duration-200 rounded-sm;
+    @apply inline-block px-8 py-3 bg-primary-500 text-accent font-bold uppercase tracking-wider transition-all duration-200;
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 100%, 12px 100%);
+    box-shadow: 0 0 20px rgba(225, 6, 0, 0.35);
+  }
+
+  .btn-primary:hover {
+    @apply bg-primary-600;
+    box-shadow: 0 0 32px rgba(225, 6, 0, 0.6);
+    transform: translateY(-1px);
   }
 
   .btn-secondary {
-    @apply inline-block px-6 py-3 border-2 border-accent text-accent font-bold uppercase tracking-wider hover:bg-accent hover:text-secondary transition-colors duration-200 rounded-sm;
+    @apply inline-block px-8 py-3 border-2 border-accent text-accent font-bold uppercase tracking-wider hover:bg-accent hover:text-secondary transition-all duration-200;
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 100%, 12px 100%);
   }
 
   .section-title {
@@ -61,6 +75,87 @@
   .card-dark {
     @apply bg-surface border border-dark-border rounded-lg overflow-hidden hover:border-highlight transition-all duration-300;
   }
+
+  .card-dark:hover {
+    box-shadow: 0 0 24px rgba(225, 6, 0, 0.18);
+    transform: translateY(-2px);
+  }
+
+  /* Glassmorphism panel */
+  .glass-panel {
+    @apply rounded-lg border border-white/10;
+    background: rgba(18, 18, 23, 0.55);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  /* Gradient text (dark red → red → white heat) — animated shimmer */
+  .text-gradient-racing {
+    background: linear-gradient(90deg, #E10600 0%, #FF4D4D 35%, #FFD9D9 55%, #FF4D4D 75%, #E10600 100%);
+    background-size: 250% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradientShift 5s ease-in-out infinite;
+  }
+
+  /* Giant outlined ticker text */
+  .ticker-text {
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.14);
+    white-space: nowrap;
+  }
+
+  .ticker-text .accent-word {
+    -webkit-text-stroke: 1px rgba(225, 6, 0, 0.55);
+  }
+
+  /* Section eyebrow label with racing bar */
+  .eyebrow {
+    @apply text-xs uppercase tracking-widest text-primary-500 mb-4 flex items-center gap-3;
+  }
+
+  .eyebrow::before {
+    content: '';
+    @apply inline-block w-8 h-0.5 bg-primary-500;
+  }
+
+  /* Racing stripe accent behind hero headings */
+  .racing-stripes {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      linear-gradient(115deg, transparent 55%, rgba(225, 6, 0, 0.08) 55.2%, rgba(225, 6, 0, 0.08) 62%, transparent 62.2%),
+      linear-gradient(115deg, transparent 64%, rgba(255, 255, 255, 0.04) 64.2%, rgba(255, 255, 255, 0.04) 68%, transparent 68.2%);
+  }
+
+  /* Subtle grid background */
+  .bg-grid {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  /* Carbon fiber texture */
+  .bg-carbon {
+    background-color: #0B0B0D;
+    background-image:
+      radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1.2px),
+      radial-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1.2px);
+    background-size: 12px 12px;
+    background-position: 0 0, 6px 6px;
+  }
+
+  /* Glowing divider line */
+  .divider-glow {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(225, 6, 0, 0.7), rgba(255, 77, 77, 0.4), transparent);
+  }
 }
 
 /* Smooth scroll behavior */
@@ -68,27 +163,52 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Animation utilities */
+/* ===== Animations ===== */
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translateX(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes marqueeScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 16px rgba(225, 6, 0, 0.25); }
+  50% { box-shadow: 0 0 36px rgba(225, 6, 0, 0.55); }
+}
+
+@keyframes speedLine {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(200%); }
+}
+
+@keyframes kenBurns {
+  0% { transform: scale(1) translate(0, 0); }
+  50% { transform: scale(1.08) translate(-1%, -1%); }
+  100% { transform: scale(1) translate(0, 0); }
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes floatOrb {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(40px, -30px) scale(1.15); }
+  66% { transform: translate(-30px, 20px) scale(0.9); }
+}
+
+@keyframes heroEnter {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .animate-fade-in-up {
@@ -97,4 +217,74 @@ html {
 
 .animate-slide-in-right {
   animation: slideInRight 0.6s ease-out;
+}
+
+.animate-marquee {
+  animation: marqueeScroll 40s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+/* Slow continuous zoom for background images */
+.animate-ken-burns {
+  animation: kenBurns 18s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Faster marquee for the giant ticker strip */
+.animate-marquee-fast {
+  animation: marqueeScroll 22s linear infinite;
+}
+
+/* Floating glow orb (place inside relative overflow-hidden, use with bg + blur) */
+.float-orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(70px);
+  opacity: 0.35;
+  pointer-events: none;
+  animation: floatOrb 12s ease-in-out infinite;
+}
+
+/* Staggered hero entrance */
+.hero-enter { animation: heroEnter 0.9s ease-out both; }
+.hero-enter-1 { animation: heroEnter 0.9s ease-out 0.15s both; }
+.hero-enter-2 { animation: heroEnter 0.9s ease-out 0.35s both; }
+.hero-enter-3 { animation: heroEnter 0.9s ease-out 0.55s both; }
+
+/* Speed line — thin streak that sweeps across (place inside relative overflow-hidden) */
+.speed-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 40%;
+  background: linear-gradient(90deg, transparent, #E10600, #FF4D4D, transparent);
+  animation: speedLine 3.2s ease-in-out infinite;
+}
+
+/* Reveal on scroll (activated by Reveal component) */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .animate-marquee, .animate-marquee-fast, .animate-pulse-glow, .speed-line,
+  .animate-ken-burns, .float-orb, .text-gradient-racing,
+  .hero-enter, .hero-enter-1, .hero-enter-2, .hero-enter-3 { animation: none; }
+  .hero-enter, .hero-enter-1, .hero-enter-2, .hero-enter-3 { opacity: 1; }
 }

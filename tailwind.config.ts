@@ -14,6 +14,7 @@ const config: Config = {
         primary: {
           50: '#fff0f0',
           100: '#ffe6e6',
+          400: '#ff4d4d',
           500: '#E10600',
           600: '#cc0500',
           700: '#b30400',
@@ -22,7 +23,7 @@ const config: Config = {
         secondary: '#0B0B0D',
         surface: '#121217',
         accent: '#FFFFFF',
-        highlight: '#00D1FF',
+        highlight: '#FF4D4D',
         // Dark mode base
         dark: {
           bg: '#0B0B0D',
@@ -31,7 +32,7 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ['var(--font-inter)', '--font-plex-thai', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-inter)', 'var(--font-plex-thai)', 'system-ui', 'sans-serif'],
         heading: ['var(--font-inter)', 'system-ui', 'sans-serif'],
       },
       letterSpacing: {
